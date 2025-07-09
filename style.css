@@ -12,9 +12,8 @@ main {
 .container {
     display: flex;
     min-width:320px;
-    max-width: 1440px;
+    max-width: 1120px;
     height: 88px;
-    width: 100%;
 }
 .button {
     display: flex;
@@ -95,6 +94,7 @@ h1::before {
 }
   .content__title-list {
     display: flex;
+    width: 100%;
     height: 40px;
     justify-content: flex-start;
     align-items: center;
@@ -109,6 +109,7 @@ h1::before {
   }
  .content__title__link {
     display: flex;
+    width: auto;
     height:40px;
     text-decoration:none;
     color: #7E7E82;
@@ -271,14 +272,15 @@ h1::before {
     translate: 0 -100%;
 }
 }
-@media (min-width:1440px) {
+@media (min-width:1120px) {
     html {
         background-color: #F8F8F8;
-        width:100%;
-        height: 100%;
+        width: 100%;
     }
     .catalog {
-        margin-left:70%;
+        margin-left:67%;
+        min-width: 320px;
+        max-width: 1440px;
     }
     .round-button,
     .chat-button {
@@ -328,16 +330,29 @@ h1::before {
 h1::before {
    display: flex;
 }
-.content__title-list {
+.services {
+ display: grid;
     overflow: visible;
     flex-wrap: wrap;
-    width: 1063px;
+    width:auto;
+    height:100%;   
+    margin: 0;
 }
-.content__title_link {
+.content__title-list {
     display: flex;
-    width: 71px;  
-  height: 24px;
-  margin-left:57px; 
+    overflow: visible;
+    flex-wrap: wrap;
+}
+.content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.content__title__link {
+    display: flex;  
+  height: 50%;
+  text-align: center;
   text-decoration: none;
     font-family:'TT LakesR' sans-serif;
     font-weight: 500;
@@ -378,6 +393,6 @@ width: 531px;
 height: 307px;
 margin: 0 auto;
 padding: 0;
-translate: 80% -75%;
+translate: 70% -75%;
 }
 }
