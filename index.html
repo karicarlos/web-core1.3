@@ -9,47 +9,52 @@
 
 </head>
 
-<body class="body">
-    <nav class="nav-list">
-        <div class="container">
-            <div class="catalog">
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="nav">
+                <ul class="nav__left">
+                    <li>
+                        <button class="button">
+                            <img src="pictue/menu.svg" alt="Menu">
+                        </button>
+                    </li>
+                    <li>
+                        <img src="pictue/logo.svg" alt="Logo" class="logo catalog__logo">
+                    </li>
+                </ul>
+                <div class="nav__buttons">
+                    <ul class="chat-buttons">
+                        <li><button class="button">
+                                <img class="call catalog__call" src="pictue/call.svg" alt="Call">
+                            </button></li>
+                        <li><button class="button">
+                                <img class="chat catalog__chat" src="" alt="Chat">
+                            </button></li>
+                        <li><button class="button">
+                                <img class="profile catalog__profile" src="pictue/profile.svg" alt="Profile">
+                            </button></li>
+                    </ul>
 
-            <ul class="round-button">
-                <li><button class="button">
-                       <img class="menu catalog__menu" src="pictue/icon.png" alt="Menu"> 
-                    </button></li>
-    
-             <img src="pictue/Group2.png" alt="Logo" class="logo catalog__logo">
-            </ul>
-            <ul class="chat-button">
-                <li><button class="button">
-                        <img class="call catalog__call" src="pictue/new1.png" alt="Call">
-                    </button></li>
-                <li><button class="button">
-                        <img class="chat catalog__chat" src="pictue/new2.png" alt="Chat">
-                    </button></li>
-                <li><button class="button">
-                        <img class="profile catalog__profile" src="pictue/new3.png" alt="Profile">
-                    </button></li>
-            </ul>
-        
-            <ul class="pink-button">
-               <li><a class="link-set" href="">Оставить заявку</a></li>
-                <li><button class="button">
-
-                        <img class="settings catalog__settings" src="pictue/Group.png" alt="Settings">
-                    </button></li>
-                <li><a class="link-search" href="">Статус ремонта</a></li>
-                <li><button class="button">
-                        <img class="search catalog__search" src="pictue/icon2.png" alt="Search">
-                    </button></li>
-            </ul>
+                    <ul class="service-buttons">
+                        <li>
+                            <button class="button">
+                                <img class="settings catalog__settings" src="pictue/settings.svg" alt="Settings">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="button">
+                                <img class="search catalog__search" src="pictue/search.svg" alt="Search">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </nav>
-        <main>
-            <div class="content">
-                <h1 class="content__title">Услуги и сервисы</h1>
+    </header>
+    <main>
+        <div class="content">
+            <h1 class="content__title">Услуги и сервисы</h1>
             <div class="services">
                 <ul class="content__title-list">
                     <li><a class="content__title__link" href="">Ремонтируемые бренды</a></li>
@@ -61,23 +66,29 @@
                     <li><a class="content__title__link" href="">Отзывы</a></li>
                 </ul>
             </div>
-            </div>
-               <p><span class="text-par">
-                    Мы являемся авторизованным сервисным центром по ремонту техники Dell.
-                    Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</span></p><br>
-                <p><span class="paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера.</span></p>
+        </div>
+        <article>
+            <section>
+                <p><span class="text-par">
+                        Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+                        Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией
+                        производителя.</span></p><br>
+                <p><span class="paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного
+                        партнера.</span></p>
                 <p><span class="par">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
-                    что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по
-                    рекомендациям и, в свою очередь, советуют нас родным и близким.</span></p> 
+                        что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются
+                        по
+                        рекомендациям и, в свою очередь, советуют нас родным и близким.</span></p>
+            </section>
             <button class="down-pic">
-                <img class="down-pic__pic" src="expand.png" alt="Читать далее">
+                <img class="down-pic__svg" src="pictue/exp.svg" alt="Читать далее">
             </button>
 
             <a class="text" href="Читать далее">Читать далее</a>
-            <img class="img_c" src="pictue/Picture Copy.png" alt="">
-            
+            <div class="logo_img"><img class="img_svg" src="pictue/Picture.png" alt=""></div>
 
-        </main>
+        </article>
+    </main>
 </body>
 
 </html>
