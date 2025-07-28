@@ -14,6 +14,130 @@ src: url("./fonts/TTLakes-Regular.eot");
 src: url("./fonts/TTLakes-Regular.ttf") format('truetype');  
 }
 
+/* css for aside */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #FFFFFF;
+    width: 320px;
+    height: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+   
+    
+}
+
+.button:hover {
+    display: flex;
+}
+
+.header-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+.container {
+display: flex;
+position: fixed;
+gap: 24px;
+justify-content: space-between;
+
+}
+.container__left {  
+    display: flex;
+    margin: 0;
+    padding: 24px;
+    list-style-type: none;
+
+}
+
+.container__logo {
+    display: flex;
+    width: 96px;
+    height: 50px;
+    
+}
+
+.container__right {
+    display: flex;
+    padding: 24px;
+    margin: 0;
+}
+
+.nav-list__menu {
+   display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+.nav-list__catalog {
+  list-style-type: none;  
+}
+
+.nav-list__menu_link,
+.nav-list__menu_link active
+ {
+    display: flex;
+    
+    text-decoration: none;
+    color: #1B1C21;
+    font-family:'TT LakesR', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px; 
+    padding:0;
+    border: 0;
+    
+   
+}
+.nav-list__menu_link:hover {
+    color: #7E7E82;
+    border-radius: 5px;
+}
+
+.nav-list__link_active:hover {
+color: #7E7E82;
+border-radius: 5px; 
+text-decoration: none;
+}
+.nav-list__link:hover::before {
+content: url("pictue/highlight.svg");
+display: flex;
+color: #41F6D7;
+width: 4px;
+height: 32px;
+
+}
+.content {
+    display: flex;
+    
+}
+
+.buttons__contacts {
+   flex-direction: row;
+    list-style-type: none; 
+    justify-content: flex-end; 
+    margin-bottom: 24px;
+}
+.address {
+    flex-direction: column;
+    text-decoration: none;
+    list-style-type: none;
+}
+.languages {
+    list-style-type: none;
+}
+
+/* css for 320px */
+
 html {
 background-color: #F8F8F8;
 overflow: hidden;
@@ -214,7 +338,9 @@ line-height: 24px;
 .text:hover {
 display: flex;
 }
+
 .text::before {
+
 content: url(/pictue/exp.svg);
 width: 7px;
 height: 10px;
@@ -224,6 +350,7 @@ margin-right: 16px;
 
 }
 
+/* css for 768px */
 
 @media (min-width:768px) {
 
@@ -322,12 +449,12 @@ display: none;
     display: flex;
     width: 100%;
     min-width: 360px;
-    min-height: 208px;
-    
-    
+    min-height: 208px;  
 }
 
 }
+
+/* css for 1120px */
 
 @media (min-width:1120px) {
 .content {
