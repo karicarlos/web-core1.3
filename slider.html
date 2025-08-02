@@ -1,113 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doc</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-<body>
-<div class="overlay"></div>
-<aside class="sidebar">
-    <header class="header-page">
-        
-            
-<div class="container__left">
-   
-        <button class="button">
-            <img class="close container__close" src="pictue/close.svg" alt="Close">
-        </button>
-    
-        <img src="pictue/logo.svg" alt="Logo" class="logo container__logo">
-    
-    
-</div>
-        <div class="container__right">
-        <button class="button">
-            <img class="search container__right_search" src="pictue/search2.svg" alt="Search">
-        </button>
-        </div>
-
-
-    </header>
-    
-    <nav class="menu-list">
-        
-    <ul class="menu-list__catalog">
-        <li class="menu-list__link menu-list__link_active">
-            <a href="#">Ремонт техники</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#">Услуги и сервисы</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#" >Корпоративным клиентам</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#">Продавцам техники</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#">Партнерам</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#">Производителям</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#">Наши сервисные центры</a>
-        </li>
-        <li class="menu-list__link">
-            <a href="#">Контакты</a>
-        </li>
-        
-    </ul>
-    
-    </nav>
-
-    <footer class="footer-aside">
-        <div class="buttons">
-            
-        
-        <ul class="buttons__contacts">
-            <li><button class="button">
-                            <img class="call buttons__call" src="pictue/call.svg" alt="Call">
-                        </button></li>
+    <body class="body">
+        <div class="overlay"></div>
+        <aside class="sidebar">
+            <header class="header-page">
+                <button class="button">
+                    <img class="button__close" src="pictue/close.svg" alt="Close">
+                </button>
+                    <img src="pictue/logo.svg" alt="Logo" class="logo">
+                <button class="button button_search">
+                    <img class="button__search" src="pictue/search2.svg" alt="Search">
+                </button>
+            </header>
+            <nav class="menu-list">
+                <ul class="menu-list__catalog">
+                    <li class="menu-list__link menu-list__link">
+                        <a class ="menu-list__link_item--active" href="#">Ремонт техники</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#">Услуги и сервисы</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#" >Корпоративным клиентам</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#">Продавцам техники</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#">Партнерам</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#">Производителям</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#">Наши сервисные центры</a>
+                    </li>
+                    <li class="menu-list__link">
+                        <a class="menu-list__link_item" href="#">Контакты</a>
+                    </li>   
+                </ul>
+            </nav>
+            <footer class="footer-aside">
+                <ul class="contacts">
                     <li>
-                        <button class="button">
-                            <img class="chat buttons__chat" src="pictue/chat.png" alt="Chat">
+                        <button class="button button_call">
+                            <img class="call contacts__call" src="pictue/call.svg" alt="Call">                        </button></li>
+                    <li>
+                        <button class="button button_chat">
+                            <img class="chat contacts__chat" src="pictue/chat.png" alt="Chat">
                         </button>
                     </li>
+                    <!-- иконка чата на фигме не открывается, скачала с инета -->
                     <li>
-                        <button class="button">
-                            <img class="profile buttons__profile" src="pictue/profile.svg" alt="Profile">
+                        <button class="button button_profile">
+                            <img class="profile contacts__profile" src="pictue/profile.svg" alt="Profile">
                         </button>
                     </li>
                 </ul>
-        </div>
-            <address class="address">
-        <a class="mail" href="mailto:mail@cps.com">mail@cps.com</a>
-        <a class="number" href="tel:8 800 890 80 00">8 800 890 80 00</a>
-      </address>
-
-     <div class="languages">
-        
-      <ul class="languages__list">
-        <li>
-          <a class="languages__ru languages__ru_active" href="#">RU</a>
-        <li>
-          <a class="languages__en" href="#">EN</a>
-        </li>
-        <li>
-          <a class="languages__ch" href="#">CH</a>
-        </li>
-      </ul>
-    </div>
-    </footer>
-</aside>
-</body>
+                <address class="address">
+                    <a class="mail" href="mailto:mail@cps.com">mail@cps.com</a>
+                    <a class="number" href="tel:8 800 890 80 00">8 800 890 80 00</a>
+                </address>
+                <ul class="languages">
+                        <a class="languages__point languages__point_active" href="#">RU</a>
+                    </li>
+                    <li>
+                        <a class="languages__point" href="#">EN</a>
+                    </li>
+                    <li>
+                        <a class="languages__point" href="#">CH</a>
+                    </li>
+                </ul>
+            </footer>
+        </aside>
+    </body>
 </html>
-        
+            
 
     
                 
