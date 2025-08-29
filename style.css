@@ -15,9 +15,6 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 }
 
 /* css for aside */
-    html {
-        overflow: hidden;
-    }
 
     .overlay {
                 position: fixed;
@@ -27,8 +24,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 height: 100%;
                 background: rgba(0, 0, 0, 0.3);
                 z-index: 999;
-    } 
-    
+    }
     .sidebar {  
                 position: fixed;
                 background-color: white;
@@ -551,4 +547,99 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 padding-right: 24px;
 
     }
+    }
+
+    /* css for swiper mobile */
+    .html {
+            background-color: #F8F8F8;
+            margin: 0;
+            padding: 0;
+    }
+
+    .title {
+            width: 288px;
+            height:48px;
+            margin: 0;
+            padding: 16px;
+            color:#7E7E82;
+            font-family:'TT LakesR', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px; 
+    }
+
+    .swiper-container {
+            position: relative;
+            width: 100%;
+            height: 196px;
+            overflow: hidden;
+    }
+
+    .brands__list {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+            padding: 16px;
+            margin: 0;
+            gap: 20px;
+   
+    }
+    .brands__item {
+           display: flex;
+           width: 224px;
+           height: 72px;
+           margin: 0;
+           padding: 8px;
+           border:#FFFFFF solid 1px;
+           background-color: #FFFFFF;
+           justify-content: space-between;
+           align-items: center;
+           
+    }
+    
+    .brands__im_len {
+            width: 108px;
+            height: 32px;
+    }
+    .brands__im_sam {
+            width: 116px;
+            height: 38px;
+    }
+    .brands__im_app {
+            width: 44px;
+            height: 44px;
+            
+    }
+    .brands__im_view {
+            width: 128px;
+            height: 21px;
+    }
+    .brands__im_bos {
+            width:128px;
+            height: 29px;
+    }
+    .brands__im_hp {
+            width: 52px;
+            height: 52px;
+    }
+    .brands__im_acer {
+            width: 94px;
+            height: 24px;
+    }
+    .brands__im_sony {
+        width: 128px;
+        height: 26px;
+    }
+
+    .button_more {
+            background-color: transparent;
+            border-radius: 50%;
+            border:#FF3E79 solid 2px;
+            margin: 16px;
+        
+    }
+    .button_more:hover {
+            cursor: pointer;
+            background-color: transparent;
+        
     }
