@@ -550,12 +550,14 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     }
 
     /* css for swiper mobile */
-    .html {
-            background-color: #F8F8F8;
-            margin: 0;
-            padding: 0;
-    }
 
+  
+    .body {
+            
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+    }
     .title {
             width: 288px;
             height:48px;
@@ -569,73 +571,56 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     }
 
     .swiper-container {
-            position: relative;
+            display: flex;
             width: 100%;
-            height: 196px;
-            overflow: hidden;
+            height: 72px;
+            
+            
     }
 
     .brands__list {
-            display: flex;
+            
             list-style-type: none;
-            flex-wrap: wrap;
-            padding: 16px;
-            margin: 0;
-            gap: 20px;
-   
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .brands__item {
            display: flex;
-           width: 224px;
-           height: 72px;
+           width: 220px;
+           height:72px;
+           padding: 20px;
            margin: 0;
-           padding: 8px;
            border:#FFFFFF solid 1px;
-           background-color: #FFFFFF;
-           justify-content: space-between;
-           align-items: center;
+           background-color: #FFFFFF; 
+            
            
     }
-    
-    .brands__im_len {
-            width: 108px;
-            height: 32px;
-    }
-    .brands__im_sam {
-            width: 116px;
-            height: 38px;
-    }
-    .brands__im_app {
-            width: 44px;
-            height: 44px;
+    .swiper-slide {
+            gap: 20px;
             
     }
-    .brands__im_view {
-            width: 128px;
-            height: 21px;
+    .brands__item:hover {
+            background-color:#f9d3da;
+            transition: 0.3s ease;  
     }
-    .brands__im_bos {
-            width:128px;
-            height: 29px;
-    }
-    .brands__im_hp {
-            width: 52px;
-            height: 52px;
-    }
-    .brands__im_acer {
-            width: 94px;
-            height: 24px;
-    }
+    
+    .brands__im_len,
+    .brands__im_sam,
+    .brands__im_app,
+    .brands__im_view,
+    .brands__im_bos,
+    .brands__im_hp,
+    .brands__im_acer,
     .brands__im_sony {
-        width: 128px;
-        height: 26px;
+            max-width: 128px;  
     }
-
     .button_more {
             background-color: transparent;
             border-radius: 50%;
             border:#FF3E79 solid 2px;
-            margin: 16px;
+            padding: 10px;
+            transition: all 0.3s ease;
+            
         
     }
     .button_more:hover {
@@ -643,3 +628,60 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             background-color: transparent;
         
     }
+    
+    .swiper-pagination {
+            display: flex;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            justify-content: center;
+            text-align: center;
+            margin-top: 10px;
+    }
+    .links-all {
+            display: none;
+    }
+
+  /* css for swiper 768px */
+
+  @media (min-width:768px) {
+
+    .swiper-container {
+        
+    }
+    .brands__item {
+           width: 224px;
+           height: 72px;    
+    }
+    .show {
+        display: flex;
+    }
+    .links-all::before {
+        content: url(/pictue/exp.svg);
+        width: 24px;
+        height: 24px;
+        color: #41F6D7;
+        
+    }
+  }
+ 
+  /* css for swiper 1120px */
+
+  @media (min-width:1120px) {
+
+ .brands__item {
+        width: 240px;
+        height: 72px;    
+    }
+.links-all {
+        display: flex;
+}
+
+  }
+
+
+
+
+
+

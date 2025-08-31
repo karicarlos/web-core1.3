@@ -3,82 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swiper</title>
+<title>Swiper - Ремонт Техники</title>
 <link rel="stylesheet" href="style.css">
-<link rel="js" href="main.js">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <header>
-        <h1 class="title">Ремонт техники различных брендов</h1>
+    <h1 class="title">Ремонт техники различных брендов</h1>
 </header>
 <body>
-   <div class="swiper-container">
-        <ul class="brands__list swiper-wrapper">
+   <div class=" brands swiper-container">
+        <ul class="brands__list swiper-wrapper ">
             <li class="brands__item swiper-slide">
-                <img class="brands__im_len" src="pictue/lenovo.svg">
+                <img class="brands__im_len" src="pictue/lenovo.svg" alt="Lenovo">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                    <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_sam" src="pictue/samsung.svg">
+                <img class="brands__im_sam" src="pictue/samsung.svg" alt="Samsung">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_app" src="pictue/apple.svg">
+                <img class="brands__im_app" src="pictue/apple.svg" alt="Apple">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_view" src="pictue/viewsonic.svg">
+                <img class="brands__im_view" src="pictue/viewsonic.svg" alt="ViewSonic">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_bos" src="pictue/bosch.svg">
+                <img class="brands__im_bos" src="pictue/bosch.svg" alt="Bosch">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_hp" src="pictue/hp.svg">
+                <img class="brands__im_hp" src="pictue/hp.svg" alt="HP">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_acer" src="pictue/acer.svg">
+                <img class="brands__im_acer" src="pictue/acer.svg" alt="Acer">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
             <li class="brands__item swiper-slide">
-                <img class="brands__im_sony" src="pictue/sony.svg">
+                <img class="brands__im_sony" src="pictue/sony.svg" alt="Sony">
                 <button class="button button_more">
-                   <img class="button__more" src="pictue/more.svg">
+                   <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
         </ul>
-    
    </div> 
    <div class="swiper-pagination"></div>
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper-container', {
-  loop: true,
-  slidesPerView: 1,
-  spaceBetween: 10,
-  pagination: { el: '.swiper-pagination', clickable: true },
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  autoplay: { delay: 3000, disableOnInteraction: false }
-});
+
+ <script>
+  const swiper = new Swiper('.swiper-container', {
+      // Опции
+      loop: true,
+      slidesPerView: 1, // Показывать 1 слайд на экране
+      spaceBetween: 10,
+
+      // Автопрокрутка
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      // Пагинация (точки)
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Адаптивность
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+
+      // Ускорение
+      speed: 600,
+    });
     </script>
 </body>
 <footer>
-
+    <section class="links-all">
+        <a class="show" href="#">Показать все</a>
+        <a class="hide" href="#">Скрыть</a>
+    </section>
 </footer>
 </html>
