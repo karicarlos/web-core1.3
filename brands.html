@@ -7,12 +7,11 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
-<header>
-    <h1 class="title">Ремонт техники различных брендов</h1>
-</header>
 <body>
-   <div class=" brands swiper-container">
-        <ul class="brands__list swiper-wrapper ">
+    <section class="brands">
+      <h1 class="title">Ремонт техники различных брендов</h1>
+      <div class="swiper">
+        <ul class="brands__list swiper-wrapper hiddenswiper">
             <li class="brands__item swiper-slide">
                 <img class="brands__im_len" src="pictue/lenovo.svg" alt="Lenovo">
                 <button class="button button_more">
@@ -31,7 +30,7 @@
                    <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
-            <li class="brands__item swiper-slide">
+            <li class="brands__item swiper-slide hidden-slide">
                 <img class="brands__im_view" src="pictue/viewsonic.svg" alt="ViewSonic">
                 <button class="button button_more">
                    <img class="button__more" src="pictue/more.svg" alt="Подробнее">
@@ -55,56 +54,24 @@
                    <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
-            <li class="brands__item swiper-slide">
+            <li class="brands__item swiper-slide hidden-slide">
                 <img class="brands__im_sony" src="pictue/sony.svg" alt="Sony">
                 <button class="button button_more">
                    <img class="button__more" src="pictue/more.svg" alt="Подробнее">
                 </button>
             </li>
         </ul>
-   </div> 
-   <div class="swiper-pagination"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+   </section>
+
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
- <script>
-  const swiper = new Swiper('.swiper-container', {
-      // Опции
-      loop: true,
-      slidesPerView: 1, // Показывать 1 слайд на экране
-      spaceBetween: 10,
-
-      // Автопрокрутка
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      // Пагинация (точки)
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      // Адаптивность
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        1024: {
-          slidesPerView: 4,
-        },
-      },
-
-      // Ускорение
-      speed: 600,
-    });
-    </script>
+    <script src="main.js" defer></script>
 </body>
 <footer>
     <section class="links-all">
-        <a class="show" href="#">Показать все</a>
-        <a class="hide" href="#">Скрыть</a>
+        <button id="toggleButton">Показать все</button>
+        
     </section>
 </footer>
 </html>

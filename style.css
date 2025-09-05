@@ -551,16 +551,18 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 
     /* css for swiper mobile */
 
-  
-    .body {
-            
+    html {
+            box-sizing: border-box;
+}
+    body {
+            padding: 0;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            background-image: linear-gradient(to right, #F8F8F8, #FFFFFF);       
     }
     .title {
-            width: 288px;
-            height:48px;
+            width: 320px;
+            height:80px;
             margin: 0;
             padding: 16px;
             color:#7E7E82;
@@ -568,37 +570,48 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             font-weight: 400;
             font-size: 16px;
             line-height: 24px; 
-    }
-
-    .swiper-container {
-            display: flex;
-            width: 100%;
-            height: 72px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             
             
     }
-
+    
+   .brands .swiper {
+            
+            padding:10px;
+            margin-top:-40px;     
+   }
+   .brands .swiper-wrapper {
+            padding: 0;
+            
+   }
     .brands__list {
             
+            gap: 10px;
             list-style-type: none;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            
     }
+    .brands .swiper-slide {
+            display: flex;
+            width: 240px;
+            height: 72px;  
+    }
+   
     .brands__item {
-           display: flex;
-           width: 220px;
-           height:72px;
-           padding: 20px;
-           margin: 0;
-           border:#FFFFFF solid 1px;
-           background-color: #FFFFFF; 
+            display: flex;
+            align-items: center;
             
-           
+            justify-content: space-between;
+            padding: 10px;
+            margin: 0;
+            border:#EAEAEA solid 1px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            background-color: #FFFFFF;  
+
     }
-    .swiper-slide {
-            gap: 20px;
-            
-    }
+    
     .brands__item:hover {
             background-color:#f9d3da;
             transition: 0.3s ease;  
@@ -612,32 +625,33 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     .brands__im_hp,
     .brands__im_acer,
     .brands__im_sony {
-            max-width: 128px;  
+            max-width: 116px;
+            min-width: 44px;
+            align-items: center;
+            margin-top: -5px;
     }
     .button_more {
             background-color: transparent;
             border-radius: 50%;
             border:#FF3E79 solid 2px;
-            padding: 10px;
-            transition: all 0.3s ease;
-            
-        
+            transition: all 0.3s ease; 
+            color: #FFFFFF;
+            align-items: center;
     }
+
     .button_more:hover {
             cursor: pointer;
-            background-color: transparent;
-        
+              
     }
     
     .swiper-pagination {
-            display: flex;
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
+            width: 204px;
+            height: 12px;
+            align-items: center;
             justify-content: center;
-            text-align: center;
-            margin-top: 10px;
+            
+            margin: 0;
+            
     }
     .links-all {
             display: none;
@@ -647,15 +661,37 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 
   @media (min-width:768px) {
 
-    .swiper-container {
-        
+    .brands .swiper {
+            height: 288px;
+            
+    }
+    .brands__list {
+            display: flex;
+            
+            
     }
     .brands__item {
            width: 224px;
-           height: 72px;    
+           height: 72px;  
+
     }
-    .show {
-        display: flex;
+   .hiddenswiper {
+            max-height: 170px;
+            
+    }
+    #toggleButton {
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+}
+     #toggleButton:hover {
+            
+}
     }
     .links-all::before {
         content: url(/pictue/exp.svg);
@@ -664,21 +700,39 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
         color: #41F6D7;
         
     }
-  }
+  
  
   /* css for swiper 1120px */
 
   @media (min-width:1120px) {
+    .swiper {
+        
+  }
 
- .brands__item {
+    .brands__item {
         width: 240px;
         height: 72px;    
     }
-.links-all {
+    .links-all {
         display: flex;
-}
+        text-align: center; 
+        margin: 20px 0;
+        color: #1B1C21;
+        font-family:'TT LakesM', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
 
+}
+    .brands__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
   }
+  
 
 
 
