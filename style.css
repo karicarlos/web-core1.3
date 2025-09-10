@@ -614,7 +614,12 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             background-color:#f9d3da;
             transition: 0.3s ease;  
     }
-    
+    .brands__item.hidden {
+            display: none;
+}
+    .links-all {
+            display: block;
+}
     .brands__im_len,
     .brands__im_sam,
     .brands__im_app,
@@ -679,6 +684,9 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             gap: 10px;
             justify-content: space-between;
   }
+  .brands__item.hidden-repeat {
+            display: none;
+}
    .swiper-pagination {
             display: none;
    }
@@ -709,7 +717,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 
   @media (min-width:1120px) {
     body {
-            min-width:1120px;
+            max-width:1120px;
     }
     .brands__list {
             display: flex;
@@ -723,9 +731,8 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
   
   .brands__item {
             flex: 1 1 calc(25% - 12px);
-            min-width: 160px;
+            min-width: 150px;
             max-width: 224px;
-            height: 70px;
             margin: 0;
             padding: 12px;
             align-items: center;
