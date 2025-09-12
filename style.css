@@ -545,7 +545,6 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     .logo_img {
                 width: 50%;
                 padding-right: 24px;
-
     }
     }
 
@@ -555,16 +554,17 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             box-sizing: border-box;
 }
     body {
-            padding: 0;
-            margin: 0;
             font-family: Arial, sans-serif;
             background-image: linear-gradient(to right, #F8F8F8, #FFFFFF);       
     }
+    .swiper {
+            position: relative;
+    }
     .title {
-            width: 320px;
-            height:80px;
-            margin: 0;
-            padding: 16px;
+            width: 288px;
+            max-height:80px;
+            margin: 10px;
+            padding: 10px;
             color:#7E7E82;
             font-family:'TT LakesR', sans-serif;
             font-weight: 400;
@@ -573,52 +573,39 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             text-transform: uppercase;
             letter-spacing: 1px;
     }
-    
-    .brands {
-            width: 100%;
-            padding: 0 16px;
-    }
     .swiper {
-            width: 100%;
+            position: relative;
             overflow: visible;
-}
-   .brands .swiper-wrapper {
-            padding: 0;
-            margin: 0;
-   }
-    .brands__list {
-
-            margin: 12px;
-            padding: 0;
-            gap: 10px;
-            list-style-type: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);    
+            padding-bottom: 20px;
+            padding-right: 20px;
     }
-   .brands .swiper-slide {
-            width: 180px;
-   }
-    .brands .brands__item {
+    .brands__list {
+            max-height: 145px;
+            max-width: 100%;
             display: flex;
-            
-            height: 60px;
+            flex-wrap: nowrap;
+            gap: 16px;  
+}
+   .brands .brands__item {
+            display: flex;
+            max-height:72px;
+            max-width: 200px;
             align-items: center;
             justify-content: space-between;
             padding: 10px;
             border:#EAEAEA solid 1px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0s 2px 6px rgba(0,0,0,0.1);
             background-color: #FFFFFF;  
     }
-    
+    .brands__list.expand {
+            display: hidden;
+    }
     .brands__item:hover {
             background-color:#f9d3da;
             transition: 0.3s ease;  
     }
-    .brands__item.hidden {
-            display: none;
-}
     .links-all {
-            display: block;
+            display: none;
 }
     .brands__im_len,
     .brands__im_sam,
@@ -630,11 +617,10 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     .brands__im_sony {
             max-width: 116px;
             min-width: 44px;
-            
     }
     .button_more {
             display: flex;
-            padding: 0;
+            margin: 0;
             background-color: transparent;
             border-radius: 50%;
             border:#FF3E79 solid 2px;
@@ -646,54 +632,51 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     .button_more:hover {
             cursor: pointer;       
     }
-    .swiper-pagination {
-            display: flex;
+   .brands .swiper-pagination {
+            position: relative;
+            height: 12px;
             justify-content: center;
-            margin-top: 36px;
-
-    }
+            top:auto;
+   }
     .links-all {
-            display: none;
+            display: hidden;
+    }
+     #toggleButton {
+        display: none;
     }
 
   /* css for swiper 768px */
 
   @media (min-width:768px) {
    body {
-            background-image: linear-gradient(to left, #FFFFFF, #f8f8f8, #FFFFFF);  
-            
+            background-image: linear-gradient(to left, #FFFFFF, #f8f8f8, #FFFFFF);
    }
-    .title {
-            width: 338px;
-            height:24px; 
-            margin-bottom: 16px;
-    }
-    
-   .brands__list {
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-            margin-top: 16px;
-            gap:16px;
-   }
-    
+   .brands {
+            width: 100%;     
+}
+.brands .brands__list {
+            gap: 16px;
+            flex-wrap:wrap;
+            height: auto;
+   } 
    .brands__item {
-            padding: 10px;
-            width: 224px;
-            height: 62px;
+            width: calc(33.33% - 12px); /* 3 в ряд */
+            padding: 12px;
             gap: 10px;
             justify-content: space-between;
   }
-  .brands__item.hidden-repeat {
-            display: none;
-}
-   .swiper-pagination {
-            display: none;
-   }
-    .links-all #toggleButton {
+  .brands__list.expand {
             display: flex;
-            margin: 10px;
-            padding: 10px;
+  }
+   .brands .swiper-pagination {
+            display: hidden;
+   }
+   .links-all {
+            display: flex;        
+}
+    #toggleButton {
+            display: inline-flex;
+            padding: 10px 14px;
             font-weight: 500;
             font-size: 16px;
             line-height: 24px;
@@ -703,7 +686,6 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             border: 0;
             border-radius: 5px;
 }
-     
     #toggleButton::before {
             content: url(/pictue/exp.svg);
             width: 24px;
@@ -716,29 +698,33 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
   /* css for swiper 1120px */
 
   @media (min-width:1120px) {
-    body {
-            max-width:1120px;
-    }
-    .brands__list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            padding: 0;
-            margin: 0;
-            
-  }
 
-  
-  .brands__item {
+.brands .brands__list {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            height: 400px;
+            align-items: center;    
+            justify-content: center;   
+}
+.brands.expand {
+            max-height: 1000px;
+}
+
+.brands.brands__item {
             flex: 1 1 calc(25% - 12px);
-            min-width: 150px;
-            max-width: 224px;
-            margin: 0;
+            max-width: 240px;
+            max-height: 72px;
             padding: 12px;
-            align-items: center;
+            gap: 10px;
             justify-content: space-between;
+}
+.brands .swiper-pagination {
+            display: hidden;
+}
+.links-all {
+            display: flex;
   }
-  
   }
   
 
