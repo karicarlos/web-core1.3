@@ -579,7 +579,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             padding-bottom: 20px;
             padding-right: 20px;
     }
-    .brands__list {
+    .brands.brands__list {
             max-height: 145px;
             max-width: 100%;
             display: flex;
@@ -597,8 +597,8 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             box-shadow: 0s 2px 6px rgba(0,0,0,0.1);
             background-color: #FFFFFF;  
     }
-    .brands__list.expand {
-            display: hidden;
+    .expand {
+            display: none;
     }
     .brands__item:hover {
             background-color:#f9d3da;
@@ -639,7 +639,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             top:auto;
    }
     .links-all {
-            display: hidden;
+            display: none;
     }
      #toggleButton {
         display: none;
@@ -652,24 +652,24 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             background-image: linear-gradient(to left, #FFFFFF, #f8f8f8, #FFFFFF);
    }
    .brands {
-            width: 100%;     
-}
-.brands .brands__list {
-            gap: 16px;
-            flex-wrap:wrap;
-            height: auto;
-   } 
-   .brands__item {
-            width: calc(33.33% - 12px); /* 3 в ряд */
-            padding: 12px;
+            width: 100%;
+ }  
+.brands__list {
             gap: 10px;
-            justify-content: space-between;
+            flex-wrap:wrap;
+            overflow: hidden;
+            max-height: 150px;
+   } 
+   .expand {
+            max-height: 1000px;
   }
-  .brands__list.expand {
-            display: flex;
+  .brands__item {
+            width: calc(33.33% - 12px); /* 3 в ряд */
+            
   }
+
    .brands .swiper-pagination {
-            display: hidden;
+            display: none;
    }
    .links-all {
             display: flex;        
@@ -698,30 +698,21 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
   /* css for swiper 1120px */
 
   @media (min-width:1120px) {
-
-.brands .brands__list {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            height: 400px;
-            align-items: center;    
-            justify-content: center;   
+.brands__list {
+            height: 200px;
+}  
+.brands__item {
+            flex: 1 1 calc(25% - 12px);
+            width: 240px;
+            max-height: 74px;
 }
-.brands.expand {
+.expand {
             max-height: 1000px;
 }
-
-.brands.brands__item {
-            flex: 1 1 calc(25% - 12px);
-            max-width: 240px;
-            max-height: 72px;
-            padding: 12px;
-            gap: 10px;
-            justify-content: space-between;
-}
 .brands .swiper-pagination {
-            display: hidden;
+            display: none;
 }
+
 .links-all {
             display: flex;
   }

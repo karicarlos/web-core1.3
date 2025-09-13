@@ -3,18 +3,14 @@ let swiper;
 const toggleButton = document.getElementById('toggleButton');
 const brandsList = document.querySelector('.brands__list');
 
-// === Инициализация / Уничтожение Swiper и управление интерфейсом ===
 function initializeSwiper() {
   const screenWidth = window.innerWidth;
 
-  // === Мобильная версия: ≤ 767px ===
   if (screenWidth <= 767) {
-    // Удаляем класс expand — он не нужен в мобильной версии
     if (brandsList) {
       brandsList.classList.remove('expand');
     }
 
-    // Проверяем наличие необходимых элементов Swiper
     const swiperContainer = document.querySelector('.swiper');
     const paginationEl = document.querySelector('.swiper-pagination');
 
@@ -23,7 +19,6 @@ function initializeSwiper() {
       return;
     }
 
-    // Инициализируем Swiper, если ещё не создан
     if (!swiper) {
       swiper = new Swiper('.swiper', {
         loop: false,
@@ -42,34 +37,26 @@ function initializeSwiper() {
             slidesPerView: 2,
             spaceBetween: 10,
           },
-          // 768+ не указываем — Swiper на десктопе уничтожается
         },
         speed: 600,
       });
-      console.log('✅ Swiper инициализирован');
+      console.log('✅ Swiper инициализирован на мобильном устройстве');
     }
 
-    // Скрываем кнопку "Показать все"
     if (toggleButton?.parentElement) {
       toggleButton.parentElement.style.display = 'none';
     }
-  }
-
-  // === Десктопная версия: ≥ 768px ===
-  else {
-    // Уничтожаем Swiper, если существует
+  } else {
     if (swiper) {
       swiper.destroy(true, true);
       swiper = null;
-      console.log('✅ Swiper уничтожен');
+      console.log('✅ Swiper уничтожен на десктопе');
     }
 
-    // Показываем кнопку "Показать все"
     if (toggleButton?.parentElement) {
       toggleButton.parentElement.style.display = 'flex';
     }
 
-    // Сбрасываем текст кнопки в соответствии с состоянием .expand
     if (toggleButton && brandsList) {
       toggleButton.textContent = brandsList.classList.contains('expand')
         ? 'Скрыть'
@@ -78,17 +65,16 @@ function initializeSwiper() {
   }
 }
 
-// === Обработчик клика по кнопке "Показать все" ===
+// ✅ ИСПРАВЛЕННЫЙ ОБРАБОТЧИК КЛИКА — БЕЗ ОШИБОК!
 if (toggleButton && brandsList) {
   toggleButton.addEventListener('click', function () {
-    const hasExpand = brandsList.classList.toggle('expand');
-
-    // Обновляем текст кнопки
-    toggleButton.textContent = hasExpand ? 'Скрыть' : 'Показать все';
+    brandsList.classList.toggle('expand'); // ← КЛАСС ДОБАВЛЯЕТСЯ!
+    toggleButton.textContent = brandsList.classList.contains('expand')
+      ? 'Скрыть'
+      : 'Показать все'; // ← ТЕКСТ МЕНЯЕТСЯ!
   });
 }
 
-// === Запуск при загрузке и изменении размера окна ===
 window.addEventListener('load', initializeSwiper);
 
 window.addEventListener('resize', () => {
