@@ -78,6 +78,6 @@ if (toggleButton && brandsList) {
 window.addEventListener('load', initializeSwiper);
 
 window.addEventListener('resize', () => {
-  clearTimeout(window.resizeTimeout);
+  clearTimeout(windw.resizeTimeout);
   window.resizeTimeout = setTimeout(initializeSwiper, 150);
 });

@@ -715,8 +715,42 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
   }
   }
   
+ /* css for final swiper mobile */
 
-
+ .name {
+            display: flex;
+            width: 288px;
+            max-height:50px;
+            margin: 10px;
+            padding: 10px;
+            color:#7E7E82;
+            font-family:'TT LakesR', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+ }
+.swiper-second {
+            position: relative;
+            overflow: visible;
+            padding-bottom: 20px;
+            padding-right: 20px;
+    }
+.devices__item.swiper-slide {
+            display: flex;
+            height:138px;
+            width: 218px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border:#EAEAEA solid 1px;
+            box-shadow: 0s 2px 6px rgba(0,0,0,0.1);
+            background-color: #FFFFFF;  
+}
+.button_more {
+            padding-bottom: 0;
+}
 
 
 
