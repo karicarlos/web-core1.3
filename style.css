@@ -171,7 +171,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 
     html {
                 background-color: #F8F8F8;
-                overflow: hidden;
+                overflow: scroll;
                 box-sizing: border-box;
     }
     body {
@@ -811,15 +811,18 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             padding-left: 12px;
             padding-bottom: 6px;
 }
+.prices__header {
+            display: none;
+}
 .nametwo::before {
             display: none;
 }
-.orices.prices__list {
-            max-height: 200px;
+.prices.prices__list {
+            height: 200px;
             max-width: 100%;
             flex-direction: row;
             flex-wrap: wrap;
-            gap: 16px;  
+            gap: 16px; 
 }
 .prices .swiper-wrapper {
             gap: 20px;
@@ -827,7 +830,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 }
 .prices .swiper-slide {
             max-width: 260px;
-            height: 200px;
+            max-height: 200px;
             flex-direction: column;
             background-color: #FFFFFF;
             padding-top: 10px;
@@ -873,7 +876,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             height:12px;
             margin-top: 0;
 }
-.nds {
+.txt-allprices__nds {
             display: flex;
             font-family:'TT LakesR', sans-serif;
             font-weight: 400;
@@ -881,7 +884,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             line-height: 20px;
             color: #1B1C21;
 }
-.comerc {   
+.txt-allprices__comerc {   
             width: 192px;
             height: 55px;
             font-family:'TT LakesM', sans-serif;
@@ -892,23 +895,120 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             margin-left: 16px;
             margin-top: -40px;
 }
-.comerc::after {
+.txt-allprices__comerc::after {
             content: url("pictue/more.svg");
             margin-left: 10px;
             vertical-align: middle;
 }
-.apesong {
-            display: flex;
-            height: 129px;
-            font-family:'TT LakesM', sans-serif;
+.footer__content {
+            
+            align-items: center;
+            justify-content: center;
+            font-family:'TT LakesR', sans-serif;
             font-weight: 500;
             font-size: 14px;
-            line-height: 16px;
+            line-height: 1.6px;
             color: #7E7E82;
-}
-.apesong__company {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             
+}
+.footer__copyright,
+.footer__developer,
+.footer__link,
+.footer__disclaimer
+ {
+            color: #7E7E82;
+            margin: 10px;
+            text-decoration: none;
+            text-align: center;
+ }
+ .footer__link {
+            margin-left:34px;
+            padding: 26px;
+ }
+ 
+ @media (min-width: 768px) {
+
+  /* Отключаем Swiper */
+  .swiper-third {
+            display: block;
+  }
+.prices__header .prices-t{
+            display: flex;
+            height: 16px;
+            padding: 20px;
+            width: 100%;
+            max-width:126px;
+            
+            color:#7E7E82;
+            font-family:'TT LakesR', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px; 
+            letter-spacing: 0;
+}
+
+  .prices__list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            background: #fff;
+            border: 1px solid #00AEEF;
+            border-radius: 6px;
+            padding: 0;
+  }
+
+  .prices .prices__item {
+            display: grid;
+            min-width: 768px;
+            max-height: 45px;
+            grid-template-columns: 1fr 1fr 1fr auto; /* ← Ключевое! */
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #eee;
+            gap: 16px; /* отступы между колонками */
+  }
+
+  .prices__item:last-child {
+            border-bottom: none;
+  }
+
+  /* Скрываем заголовки */
+  .prices-tit--repair,
+  .prices-tit--price,
+  .prices-tit--time {
+            display: none;
+  }
+
+  /* Берем только первые 3 <p> — это Услуга, Цена, Срок */
+  .prices__description:nth-child(2) { grid-column: 1; } /* Услуга */
+  .prices__description:nth-child(4) { grid-column: 2; } /* Цена */
+  .prices__description:nth-child(6) { grid-column: 3; } /* Срок */
+
+  /* Кнопка — в последней колонке */
+  .button_order {
+            grid-column: 4;
+            justify-self: end;
+            background-color: #FF3E79;
+            border: none;
+            border-radius: 16px;
+            padding: 8px 20px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            white-space: nowrap;
+  }
+
+  /* Стили текста */
+  .prices__description {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+            text-align: left;
+  }
+
+  /* Выравнивание цены и срока по центру */
+  .prices__description:nth-child(4),
+  .prices__description:nth-child(6) {
+            text-align: center;
+  }
 }
