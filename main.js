@@ -1,6 +1,6 @@
-let swiperBrands;     // Для .swiper (бренды)
-let swiperDevices;    // Для .swiper-second (техника)
-let swiperPrices;     // Для .swiper-third (цены на услуги) — ✅ ДОБАВЛЕНО
+let swiperBrands;
+let swiperDevices;
+let swiperPrices;
 
 const toggleButton = document.getElementById('toggleButton');
 const brandsList = document.querySelector('.brands__list');
@@ -80,7 +80,7 @@ function initializeAll() {
       console.warn('Swiper (техника): элементы не найдены');
     }
 
-    // === ИНИЦИАЛИЗАЦИЯ SWIPER ДЛЯ ЦЕН (.swiper-third) — ✅ ДОБАВЛЕНО ===
+    // === ИНИЦИАЛИЗАЦИЯ SWIPER ДЛЯ ЦЕН (.swiper-third) ===
     const swiperContainer3 = document.querySelector('.swiper-third');
     const paginationEl3 = document.querySelector('.swiper-pagination-third');
 
@@ -113,7 +113,7 @@ function initializeAll() {
         console.log('✅ Swiper (цены) инициализирован на мобильном устройстве');
       }
     } else {
-      console.warn('Swiper (цены): элементы не найдены — проверь .swiper-third и .swiper-pagination-third');
+      console.warn('Swiper (цены): элементы не найдены');
     }
 
     // Скрываем кнопку "Показать все"
@@ -138,7 +138,7 @@ function initializeAll() {
       console.log('✅ Swiper (техника) уничтожен на десктопе');
     }
 
-    // Уничтожаем Swiper для цен — ✅ ДОБАВЛЕНО
+    // Уничтожаем Swiper для цен
     if (swiperPrices) {
       swiperPrices.destroy(true, true);
       swiperPrices = null;
@@ -156,6 +156,12 @@ function initializeAll() {
         ? 'Скрыть'
         : 'Показать все';
     }
+    // Обновляем текст кнопки
+    if (toggleButton && devicesList) {
+      toggleButton.textContent = devicesList.classList.contains('over')
+        ? 'Скрыть'
+        : 'Показать все';
+    }
   }
 }
 
@@ -164,6 +170,15 @@ if (toggleButton && brandsList) {
   toggleButton.addEventListener('click', function () {
     brandsList.classList.toggle('expand');
     toggleButton.textContent = brandsList.classList.contains('expand')
+      ? 'Скрыть'
+      : 'Показать все';
+  });
+}
+  // === Обработчик клика по кнопке "Показать все" ===
+if (toggleButton && devicesList) {
+  toggleButton.addEventListener('click', function () {
+    brandsList.classList.toggle('over');
+    toggleButton.textContent = devicesList.classList.contains('over')
       ? 'Скрыть'
       : 'Показать все';
   });
