@@ -169,6 +169,17 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
 
 /* css for right aside 320px */
 
+.button_close {
+                width: 40px;
+                height: 40px;
+                background: white;
+                border-radius: 50%;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                z-index: 1001; /* Чтобы была поверх формы */
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
     .overlay {
                 position: fixed;
                 top: 0;
@@ -177,6 +188,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 height: 100%;
                 background: rgba(0, 0, 0, 0.3);
                 z-index: 999;
+
     }
     .feedback {  
                 position: fixed;
@@ -184,17 +196,13 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 right: 0;                   /* Прижимаем к правому краю */
                 background-color: white;
                 width: 320px;
+                max-width: 360px;
                 height: 100%;
-                padding: 20px 14px;
+                padding: 20px;
                 overflow-y: scroll;
                 overflow-x: hidden;
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
                 z-index: 1000; 
-    }
-
-    .button .header-btn {
-                display: flex;
-                
     }
  .connect__title {
                 display: flex;
@@ -207,35 +215,204 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 line-height: 40px;
                 letter-spacing: -0.6px;
                 margin-left: 0;
-                margin-right:0;
+                margin-top: 40px;
+                
  }
  .connect__title::before {
                 display: inline-flex;
                 content: "";
-                margin-left: 0;
                 width: 4px;
                 height: 40px;
+                margin-right: 8px;
+                margin-left: -14px;
                 background-color:#41F6D7;
  }
 
+#name,
+#number,
+#email {
+                width:280px;
+                height: 42px;
+                margin-bottom: 18px;
+                border: 1px solid #EAEAEA;
+}
+#message {
+                width: 280px;
+                height: 112px;
+                border: 1px solid #EAEAEA;
+}
+#name::placeholder {
+                color: #B5B6BC;
+}
+#number::placeholder {
+                color: #B5B6BC;
+}
+
+#email::placeholder {
+                color: #B5B6BC;
+}
+
+#message::placeholder {
+                color: #B5B6BC;
+}
+.information {
+                color: #7E7E82;
+                margin-left: 0;
+                font-family: 'TT LakesR', sans-serif;;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+}
+.info, .info-two {
+                color: #FF3E79;
+                font-family: 'TT LakesR', sans-serif;;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+}
+.feedback .button_send {
+                display: flex;
+                width: 136px;
+                height: 32px;
+                justify-content: space-around;
+                margin-left: auto;
+                margin-top: 30px;
+                margin-right: 20px;
+           
+}
+.button_send::after {
+                content: url("pictue/>.svg");
+                color: #FFFFFF;
+                width: 7px;
+                height: 9px;
+                margin-top:-5px;
+}
+.send {
+                color:#FFFFFF;
+                width: 89px;
+                height: 24px;
+                font-family:'TT LakesB', sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 24px; 
+}
 /* === ДЕСКТОПНАЯ ВЕРСИЯ (добавьте это) === */
-@media (min-width: 768px) {
+@media (min-width: 513px) {
+  
+ .button_close {
+                 right: auto; /* Убираем right */
+                 left: 20px;  /* Прижимаем к левому краю */
+  }
+  }  
   .feedback {
-    top: 0;              /* Отступ сверху */
-    right: 0;            /* Прижимаем к правому краю */
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Усиливаем тень */
+                top: 0;              /* Отступ сверху */
+                right: 0;            /* Прижимаем к правому краю */
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Усиливаем тень */
   }
 
   .overlay {
-    background: transparent; /* На десктопе оверлей можно сделать прозрачным или убрать */
+                position: fixed;
+                z-index: 1; /* На десктопе оверлей можно сделать прозрачным или убрать */
   }
 
+  /* css for right aside 320px call-order */
+
+ .button_close {
+                display: flex;
+                margin-left: auto;
+}
+ .overlay {
+                position: fixed;
+                top: 0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 999;
+
+    }
+  .body-aside .call {  
+                position: fixed;
+                top: 0;
+                right: 0;                   /* Прижимаем к правому краю */
+                background-color: white;
+                width: 320px;
+                max-width: 360px;
+                height: 100%;
+                padding: 20px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000; 
+    }
+ .call__title {
+                display: flex;
+                color: #000000;
+                width: 288px;
+                height: 40px;
+                font-family:'TT LakesB', sans-serif;
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 40px;
+                letter-spacing: -0.6px;
+                margin-left: 0;
+                margin-top: 40px;
+                
+ }
+ .call__title::before {
+                display: inline-flex;
+                content: "";
+                width: 4px;
+                height: 40px;
+                margin-right: 8px;
+                margin-left: -14px;
+                background-color:#41F6D7;
+ }
+#number {
+                width:280px;
+                height: 42px;
+                margin-bottom: 18px;
+                border: 1px solid #EAEAEA;
+}
+
+#number::placeholder {
+                color: #B5B6BC;
+}
+
+.information {
+                color: #7E7E82;
+                width: 288px;
+                margin-left: 0;
+                font-family: 'TT LakesR', sans-serif;;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+}
+.info, .info-two {
+                display: flex;
+                color: #FF3E79;
+                font-family: 'TT LakesR', sans-serif;;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+}
+.call .button_send {
+                display: flex;
+                width: 136px;
+                height: 32px;
+           
+}
+.button_send::after {
+                display: flex;
+}
+.call .send {
+                display: flex;
 }
     /* css for 320px */
 
     html {
-                background-color: #F8F8F8;
+            background-color: #F8F8F8;
                 overflow: scroll;
                 box-sizing: border-box;
     }
