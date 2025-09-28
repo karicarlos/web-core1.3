@@ -25,6 +25,10 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 background: rgba(0, 0, 0, 0.3);
                 z-index: 999;
     }
+    .overlay.active {
+                opacity: 1;
+                visibility: visible;
+}
     .sidebar {  
                 position: fixed;
                 background-color: white;
@@ -35,6 +39,9 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
                 z-index: 1000; 
     }
+    .sidebar.open {
+                left: 0;
+}
     .button:hover {
                 display: flex;
                 background-color:#5353f9;
@@ -880,7 +887,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
     .links-all {
             display: none;
     }
-     #toggleButton {
+     #toggleButtonBrands {
         display: none;
     }
 
@@ -911,7 +918,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
    .links-all {
             display: flex;        
 }
-    #toggleButton {
+    #toggleButtonBrands {
             display: inline-flex;
             font-weight: 500;
             font-size: 16px;
@@ -922,7 +929,7 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             border: 0;
             border-radius: 5px;
 }
-    #toggleButton::before {
+    #toggleButtonBrands::before {
             content: url(/pictue/exp.svg);
             width: 24px;
             height: 24px;
@@ -1286,12 +1293,12 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             display: flex;
             margin-top: 0;
   }
-#toggleButton {
+#toggleButtonDevices {
             display: inline-flex;
             align-items: center;
 }
 
-#toggleButton::before {
+#toggleButtonDevices::before {
             display: flex;
 }
 }
@@ -1310,12 +1317,13 @@ src: url("./fonts/TTLakes-Regular.ttf") format('truetype');
             display: flex;
             margin-top: 0;
 }
-#toggleButton {
+#toggleButtonDevices {
             display: inline-flex;
             align-items: center;
+            border: 0;
 }
 
-#toggleButton::before {
+#toggleButtonDevices::before {
             display: flex;
 }
 
