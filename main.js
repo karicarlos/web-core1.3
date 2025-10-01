@@ -4,10 +4,10 @@ let swiperDevices;
 let swiperPrices;
 
 // === Элементы для "Показать все" ===
-const toggleButtonBrands = document.getElementById('toggleButtonBrands'); // ← исправлено!
-const toggleButtonDevices = document.getElementById('toggleButtonDevices'); // ← исправлено!
+const toggleButtonBrands = document.getElementById('toggleButtonBrands');
+const toggleButtonDevices = document.getElementById('toggleButtonDevices');
 const brandsList = document.querySelector('.brands__list');
-const devicesList = document.querySelector('.repair-devices'); // ← добавлено
+const devicesList = document.querySelector('.repair-devices');
 
 // === Функция: инициализация/обновление всех Swiper-ов и интерфейса ===
 function initializeAll() {
@@ -18,7 +18,7 @@ function initializeAll() {
     if (brandsList) brandsList.classList.remove('expand');
     if (devicesList) devicesList.classList.remove('over');
 
-    // Инициализация Swiper'ов (бренды)
+    // Инициализация Swiper'ов
     if (!swiperBrands && document.querySelector('.swiper')) {
       swiperBrands = new Swiper('.swiper', {
         loop: false,
@@ -31,7 +31,6 @@ function initializeAll() {
       });
     }
 
-    // Swiper для техники
     if (!swiperDevices && document.querySelector('.swiper-second')) {
       swiperDevices = new Swiper('.swiper-second', {
         loop: false,
@@ -44,7 +43,6 @@ function initializeAll() {
       });
     }
 
-    // Swiper для цен
     if (!swiperPrices && document.querySelector('.swiper-third')) {
       swiperPrices = new Swiper('.swiper-third', {
         loop: false,
@@ -99,40 +97,90 @@ if (toggleButtonDevices && devicesList) {
   });
 }
 
-// === УПРАВЛЕНИЕ БОКОВЫМ МЕНЮ ===
-// Ищем элементы ТОЛЬКО после полной загрузки DOM
+// === ОБЩИЙ ОБРАБОТЧИК DOM ===
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Боковое меню ---
   const menuOpenBtn = document.querySelector('.menu-open-btn');
   const sidebar = document.querySelector('.sidebar');
   const sidebarCloseBtn = document.querySelector('.sidebar-close-btn');
-  const overlays = document.querySelectorAll('.overlay');
-  const overlay = overlays.length > 0 ? overlays[0] : null; // берём первый
+  const overlay = document.querySelector('.overlay');
 
-  // Открыть меню
   function openSidebar() {
-    if (sidebar) sidebar.classList.add('open');
+    if (sidebar) {
+      sidebar.classList.add('open');
+      sidebar.classList.add('side-menu');
+    }
     if (overlay) overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
-  // Закрыть меню
   function closeSidebar() {
-    if (sidebar) sidebar.classList.remove('open');
+    if (sidebar) {
+      sidebar.classList.remove('open');
+      sidebar.classList.remove('side-menu');
+    }
     if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  // Назначаем обработчики
-  if (menuOpenBtn) {
-    menuOpenBtn.addEventListener('click', openSidebar);
+  if (menuOpenBtn) menuOpenBtn.addEventListener('click', openSidebar);
+  if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+  if (overlay) overlay.addEventListener('click', closeSidebar);
+
+  // --- Форма обратной связи (чат) ---
+  const messageOpenBtn = document.querySelector('.message-open-btn');
+  const feedbackBlock = document.querySelector('.feedback');
+  const feedbackCloseBtn = feedbackBlock?.querySelector('.button_close');
+
+  if (messageOpenBtn && feedbackBlock) {
+    messageOpenBtn.addEventListener('click', () => {
+      feedbackBlock.classList.add('message-menu');
+      document.body.style.overflow = 'hidden';
+    });
   }
 
-  if (sidebarCloseBtn) {
-    sidebarCloseBtn.addEventListener('click', closeSidebar);
+  if (feedbackCloseBtn && feedbackBlock) {
+    feedbackCloseBtn.addEventListener('click', () => {
+      feedbackBlock.classList.remove('message-menu');
+      document.body.style.overflow = '';
+    });
   }
 
-  if (overlay) {
-    overlay.addEventListener('click', closeSidebar);
+  if (feedbackBlock) {
+    feedbackBlock.addEventListener('click', (e) => {
+      if (e.target === feedbackBlock) {
+        feedbackBlock.classList.remove('message-menu');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // --- Форма "Заказать звонок" ---
+  const callOpenBtn = document.querySelector('.call-open-btn');
+  const callBlock = document.querySelector('.call-modal');
+  const callCloseBtn = callBlock?.querySelector('.button_close');
+
+  if (callOpenBtn && callBlock) {
+    callOpenBtn.addEventListener('click', () => {
+      callBlock.classList.add('call-menu');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (callCloseBtn && callBlock) {
+    callCloseBtn.addEventListener('click', () => {
+      callBlock.classList.remove('call-menu');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (callBlock) {
+    callBlock.addEventListener('click', (e) => {
+      if (e.target === callBlock) {
+        callBlock.classList.remove('call-menu');
+        document.body.style.overflow = '';
+      }
+    });
   }
 });
 
@@ -141,12 +189,12 @@ window.addEventListener('resize', () => {
   clearTimeout(window.resizeTimeout);
   window.resizeTimeout = setTimeout(() => {
     initializeAll();
-    // Закрываем меню, если ширина ≥ 768
     if (window.innerWidth >= 768) {
       const sidebar = document.querySelector('.sidebar');
       const overlay = document.querySelector('.overlay');
       if (sidebar?.classList.contains('open')) {
         sidebar.classList.remove('open');
+        sidebar.classList.remove('side-menu');
         if (overlay) overlay.classList.remove('active');
         document.body.style.overflow = '';
       }
