@@ -50,10 +50,10 @@
             <footer class="footer-aside">
                 <ul class="contacts">
                     <li>
-                        <button class="button button_call">
+                        <button class="button button_call call-open-btn">
                             <img class="call contacts__call" src="pictue/call.svg" alt="Call">                        </button></li>
                     <li>
-                        <button class="button button_chat">
+                        <button class="button button_chat message-open-btn">
                             <img class="chat contacts__chat" src="pictue/chat.png" alt="Chat">
                         </button>
                     </li>
@@ -86,7 +86,7 @@
                     <img class="button__close" src="pictue/close.svg" alt="Close">
                 </button>
             <div class="call-order">
-                <h2 class="call__title">Заказать звонок</h2>
+                <h2 class="call-title">Заказать звонок</h2>
             </div>
             <form>
                 <input type="number" id="number" name="number" placeholder="Телефон"><br>
@@ -96,6 +96,7 @@
                         <span class="send">ОТПРАВИТЬ</span>
             </button>
         </aside>
+<main class="box">
     <header class="header">
     <div class="header__container">
         <div class="nav">
@@ -116,7 +117,7 @@
                             <img class="call nav__buttons__call" src="pictue/call.svg" alt="Call">
                         </button></li>
                     <li><button class="button message-open-btn">
-                            <img class="chat nav__buttons__chat" src="" alt="Chat">
+                            <img class="chat nav__buttons__chat" src="pictue/chat.png" alt="Chat">
                         </button></li>
                     <li><button class="button">
                             <img class="profile nav__buttons__profile" src="pictue/profile.svg" alt="Profile">
@@ -137,9 +138,9 @@
             </div>
         </div>
     </header>
-<main class="container">
+<div class="container">
     <div class="content">
-            <h2 class="content__title">Услуги и сервисы</h2>
+        <h2 class="content__title">Услуги и сервисы</h2>
 <div class="desktop">
         <span class="desktop__link_rep">Оставить заявку</span>
         <button class="button">
@@ -177,21 +178,20 @@
                 </li>
             </ul>
         </nav>
-    <article>
-        <section>
-            <p class="text-par">
+    <article class="main-article">
+        <section class="text-description">
+                <p class="text-par">
                     Мы являемся авторизованным сервисным центром по ремонту техники Dell.
                     Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией
                     производителя.</p><br>
-            <p class="paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного
+                <p class="paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного
                     партнера.</p>
-            <p class="par">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
+                <p class="par">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
                     что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются
                     по
                     рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
-        
         <a class="text" href="#">Читать далее</a>
-            </section>
+</section>
             <img class="logo_img" src="pictue/Picture.png" alt="Image">
     </article>
     <section class="brands">
@@ -412,6 +412,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="main.js" defer></script>
 </body>
+</main>
 <footer class="footer">
   <div class="footer__content">
     <p class="footer__copyright">© 2019 CPS</p>

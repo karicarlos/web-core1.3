@@ -184,6 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+function toggleOverlay(show) {
+  const overlay = document.querySelector('.overlay');
+  if (overlay) {
+    if (show) {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // блокируем прокрутку
+    } else {
+      overlay.classList.remove('active');
+      document.body.style.overflow = ''; // разрешаем прокрутку
+    }
+  }
+}
 // === Закрытие меню при ресайзе на десктоп ===
 window.addEventListener('resize', () => {
   clearTimeout(window.resizeTimeout);
@@ -201,6 +213,49 @@ window.addEventListener('resize', () => {
     }
   }, 150);
 });
+// --- Обработчики для кнопок в боковом меню ---
 
+const chatBtnInSidebar = document.querySelector('.sidebar .message-open-btn');
+const callBtnInSidebar = document.querySelector('.sidebar .call-open-btn');
+
+if (chatBtnInSidebar) {
+  chatBtnInSidebar.addEventListener('click', () => {
+    // Закрываем боковое меню (если нужно)
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      sidebar.classList.remove('open');
+      sidebar.classList.remove('side-menu');
+    }
+    // Открываем форму обратной связи
+    const feedbackBlock = document.querySelector('.feedback');
+    if (feedbackBlock) {
+      feedbackBlock.classList.add('message-menu');
+      document.body.style.overflow = 'hidden';
+    }
+    // Показываем оверлей
+    const overlay = document.querySelector('.overlay');
+    if (overlay) overlay.classList.add('active');
+  });
+}
+
+if (callBtnInSidebar) {
+  callBtnInSidebar.addEventListener('click', () => {
+    // Закрываем боковое меню (если нужно)
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      sidebar.classList.remove('open');
+      sidebar.classList.remove('side-menu');
+    }
+    // Открываем форму "Заказать звонок"
+    const callBlock = document.querySelector('.call-modal');
+    if (callBlock) {
+      callBlock.classList.add('call-menu');
+      document.body.style.overflow = 'hidden';
+    }
+    // Показываем оверлей
+    const overlay = document.querySelector('.overlay');
+    if (overlay) overlay.classList.add('active');
+  });
+}
 // === Запуск при загрузке ===
 window.addEventListener('load', initializeAll);
